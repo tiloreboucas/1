@@ -1,293 +1,322 @@
 import java.util.*;
 
 class Main{
- 
-  public static void main(String[] args) {
-   
-    Scanner ler = new Scanner(System.in);
-    System.out.println("Quiz filmes e livros de Terror");
-    System.out.print("Digite seu nome: ");
-    String nome = ler.nextLine();
-   
-     System.out.println("|****************|");
-     System.out.println("|      Menu      |");
-     System.out.println("|****************|");
-     System.out.println("| 1 - Instrucoes |");
-     System.out.println("| 2 - Jogar      |");
-     System.out.println("| 3 - Creditos   |");
-     System.out.println("| 4 - Sair       |");
-     System.out.println("|   Sua Opcao    |");
-     System.out.println("|****************|");
-    int opcao = ler.nextInt();
-   
-    switch(opcao){
-      case 1: System.out.println("Opção 1: Instruções");
-      instrucoes();
-      break;
+    public static void main(String[] args) {
 
-      case 2: System.out.println("Opção 2: Jogar");
-      jogar();
-      break;
+        Scanner ler = new Scanner(System.in);
+        System.out.println("Quiz filmes e livros de Terror");
+        System.out.print("Digite seu nome: ");
+        String nome = ler.nextLine();
 
-      case 3: System.out.println ("Opção 3: Créditos");
-      creditos();
-      break;
-         
-      case 4: System.out.println("Opção 4 - Sair");
-      System.exit(0);
-      break;
-
-      default: System.out.print("Opção Inexistente! \nTente novamente!");
- 
+        menu();
     }
-     
-  }
-  public static void instrucoes(){
-    String msg = "";
-      msg += "Bem vindo ao Quiz \n";
-      msg += "Você terá 10 perguntas.\n";
-      msg += "A cada acerto você ganhará 1 ponto.\n";
-      msg += "Ao final do jogo voce sabera seu nivel de conhecimento";
-      System.out.println(msg);
+    public static void instrucoes(){
+        String msg = "";
+        msg += "Bem vindo ao Quiz \n";
+        msg += "Você terá 10 perguntas.\n";
+        msg += "A cada acerto você ganhará 1 ponto.\n";
+        msg += "Ao final do jogo voce sabera seu nivel de conhecimento";
+        System.out.println(msg);
+
+        conditionalWay();
     }
-  public static void creditos(){
-    String msg = "";
-    msg += "\nAnálise e Desenvolvimento de de Sistemas - Turma C\n";
-    msg += "\nSENAC\n";
-    msg += "\nAlunos:\n";
-    msg += "Amanda Alves\n";
-    msg += "Diego Lima\n";
-    msg += "Jimmy Jackson\n";  
-    System.out.println(msg);
-  }
-  public static double jogar(){
-   
-    Scanner ler = new Scanner(System.in);
-    System.out.print("Digite o numero 1 para iniciar:");
-    int personagem = ler.nextInt();
-    double pontos=0;
+    public static void creditos(){
+        String msg = "";
+        msg += "\nAnálise e Desenvolvimento de de Sistemas - Turma C\n";
+        msg += "\nSENAC\n";
+        msg += "\nAlunos:\n";
+        msg += "Amanda Alves\n";
+        msg += "Diego Lima\n";
+        msg += "Jimmy Jackson\n";
+        System.out.println(msg);
 
-    if (personagem==1){
-       System.out.println("\nBem vindo Jogador!");
-      System.out.println("\nVamos começar? \nBoa Sorte!");
-
-      System.out.println("\n Qual o nome do autor do livro  It : A coisa ? ");
-      System.out.println("[1] Edgar Allan Poe");
-      System.out.println("[2] Stephen King");
-      System.out.println("[3] George Orwell");
-      System.out.print("Qual a sua resposta: ");
-      int c1 = ler.nextInt();
-
-      if(c1 == 2){
-        pontos = pontos + 1;
-        System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
-      }
-      else{
-        pontos = pontos - 1;
-        System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
-      }
-
-        System.out.println("\nO filme O Iluminado de terror psicologico. Qual o nome do ator que interpretou o personagem Jack Torrance? ");
-      System.out.println("[1] Antonio Bandeira");
-      System.out.println("[2] Jack Nicholson");
-      System.out.println("[3] Ary Frontoura");
-      System.out.print("Qual a sua resposta: ");
-      int c2 = ler.nextInt();
-
-      if(c2 == 2){
-        pontos = pontos + 1;
-        System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
-      }
-      else{
-        pontos = pontos - 1;
-        System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
-      }
-     
-      System.out.println("\nO filme invocação do mal é baseado em um caso em que os Warren ajuda uma familia. Qual o nome da familia? ");
-      System.out.println("[1] Familia Silva");
-      System.out.println("[2] Familia Perron");
-      System.out.println("[3] Familia Taylor");
-      System.out.print("Qual a sua resposta: ");
-      int c3 = ler.nextInt();
-
-      if(c3 == 2){
-        pontos = pontos + 1;
-        System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
-      }
-      else{
-        pontos = pontos - 1;
-        System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
-      }
-     
-      System.out.println("\nO casal Warren resolveu um caso de uma boneca possuida.Qual o nome dessa boneca? ");
-      System.out.println("[1] Annabelle");
-      System.out.println("[2] Susi");
-      System.out.println("[3] Alive");
-      System.out.print("Qual a sua resposta: ");
-      int c4 = ler.nextInt();
-
-      if(c4 == 1){
-        pontos = pontos + 1;
-        System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
-      }
-      else{
-        pontos = pontos - 1;
-        System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
-      }
-     
-      System.out.println("\nEm qual filme de terror Samara(personagem) aparece saindo da TV ?");
-      System.out.println("[1] O grito");
-      System.out.println("[2] A freira");
-      System.out.println("[3] O chamado");
-      System.out.print("Qual a sua resposta: ");
-      int c5 = ler.nextInt();
-
-      if(c5 == 3){
-        pontos = pontos + 1;
-        if(pontos==5){
-        System.out.println ("Parabéns! Seu total de pontos é de: " + pontos + ", portanto, você acabou de subir de nível");
-        }
-         
-      }
-      else{
-        pontos = pontos - 1;
-        System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
-      }
-     
-      System.out.println("\nQual o nome da serie em que dois irmãos investiga casos sobrenaturais ? ");
-      System.out.println("[1] Eu vi");
-      System.out.println("[2] American Horror Stories");
-      System.out.println("[3] Sobrenatural");
-      System.out.print("Qual a sua resposta: ");
-      int c6 = ler.nextInt();
-
-      if(c6 == 3){
-        pontos = pontos + 1;
-        if(pontos==5){
-        System.out.println ("Parabéns! Seu total de pontos é de: " + pontos + ", portanto, você acabou de subir de nível");
-        }
-        else{
-            System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
-          }      
-      }
-     
-      else if (c6!=3){
-        pontos = pontos - 1;
-        System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
-      }
-
-     
-      System.out.println("\nQual o nome do filme de terror lançado no ano de 2004 que se passa no japão? ");
-      System.out.println("[1] Harry Potter");
-      System.out.println("[2] Chucky");
-      System.out.println("[3] O grito");
-      System.out.print("Qual a sua resposta: ");
-      int c7 = ler.nextInt();
-
-      if(c7 == 3){
-        pontos = pontos + 1;
-        if(pontos==5){
-        System.out.println ("Parabéns! Seu total de pontos é de: " + pontos + ", portanto, você acabou de subir de nível");
-        }
-        else{
-            System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
-          }      
-      }
-     
-      else if (c7!=3){
-        pontos = pontos - 1;
-        System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
-      }
-       
-      System.out.println("\nQual filme de terror se passa a maior parte em um unico ambiente ,por ser um filme de baixo orçamento  ? ");
-      System.out.println("[1] Atividade Paranormal");
-      System.out.println("[2] Jogos Vorazes");
-      System.out.println("[3] Jogos Mortais I");
-      System.out.print("Qual a sua resposta: ");
-      int c8 = ler.nextInt();
-
-      if(c8 == 3){
-        pontos = pontos + 1;
-        if(pontos==5){
-        System.out.println ("Parabéns! Seu total de pontos é de: " + pontos + ", portanto, você acabou de subir de nível!");
-        }
-        else{
-            System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
-          }      
-      }
-     
-      else if (c8!=3){
-        pontos = pontos - 1;
-        System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
-      }
-       
-      System.out.println("\nO filme Doutor Sono é continuação de qual filme de terror ? ");
-      System.out.println("[1] Carrie, a Estranha");
-      System.out.println("[2] Christine, o Carro Assassino");
-      System.out.println("[3] O Ilumidado");
-      System.out.print("Qual a sua resposta: ");
-      int c9 = ler.nextInt();
-
-      if(c9 == 3){
-        pontos = pontos + 1;
-        if(pontos==5){
-        System.out.println ("Parabéns! Seu total de pontos é de: " + pontos + ", portanto, você acabou de subir de nível");
-        }
-        else{
-            System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
-          }      
-      }
-     
-      else if (c9!=3){
-        pontos = pontos - 1;
-        System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
-      }          
-
-      System.out.println("\nEm qual estado americano fica o museu do oculto ou museu dos Warren? ");
-      System.out.println("[1] Nova Iorque");
-      System.out.println("[2] São Paulo");
-      System.out.println("[3] Connecticut ");
-      System.out.print("Qual a sua resposta: ");
-      int c10 = ler.nextInt();
-
-      if(c10 == 3){
-        pontos = pontos + 1;
-        if(pontos==5){
-        System.out.println ("Parabéns! Seu total de pontos é de: " + pontos + ", portanto, você acabou de subir de nível");
-        }
-        else{
-            System.out.println ("Parabéns, certa respota! Seu total de pontos é de: " + pontos);
-          }      
-      }
-     
-      else if (c10!=3){
-        pontos = pontos - 1;
-        System.out.println ("Oh nao, voce errou! Seu total de pontos é de: " + pontos);
-      }
-
-   
+        conditionalWay();
     }
+    public static void jogar(){
+        Scanner ler = new Scanner(System.in);
+        System.out.print("Digite o numero 1 para iniciar:");
 
-    
-    else{
-      System.out.println("Opção inválida");
+        int personagem = ler.nextInt();
+        double pontos=0;
+
+        if (personagem==1){
+            System.out.println("\nBem vindo Jogador!");
+            System.out.println("\nVamos começar? \nBoa Sorte!");
+
+            System.out.println("\n Qual o nome do autor do livro  It : A coisa ? ");
+            System.out.println("[1] Edgar Allan Poe");
+            System.out.println("[2] Stephen King");
+            System.out.println("[3] George Orwell");
+            System.out.print("Qual a sua resposta: ");
+            int c1 = ler.nextInt();
+
+            if(c1 == 2){
+                pontos = pontos + 1;
+                System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
+            }
+            else{
+                pontos = pontos - 1;
+                System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
+            }
+
+            System.out.println("\nO filme O Iluminado de terror psicologico. Qual o nome do ator que interpretou o personagem Jack Torrance? ");
+            System.out.println("[1] Antonio Bandeira");
+            System.out.println("[2] Jack Nicholson");
+            System.out.println("[3] Ary Frontoura");
+            System.out.print("Qual a sua resposta: ");
+            int c2 = ler.nextInt();
+
+            if(c2 == 2){
+                pontos = pontos + 1;
+                System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
+            }
+            else{
+                pontos = pontos - 1;
+                System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
+            }
+
+            System.out.println("\nO filme invocação do mal é baseado em um caso em que os Warren ajuda uma familia. Qual o nome da familia? ");
+            System.out.println("[1] Familia Silva");
+            System.out.println("[2] Familia Perron");
+            System.out.println("[3] Familia Taylor");
+            System.out.print("Qual a sua resposta: ");
+            int c3 = ler.nextInt();
+
+            if(c3 == 2){
+                pontos = pontos + 1;
+                System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
+            }
+            else{
+                pontos = pontos - 1;
+                System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
+            }
+
+            System.out.println("\nO casal Warren resolveu um caso de uma boneca possuida.Qual o nome dessa boneca? ");
+            System.out.println("[1] Annabelle");
+            System.out.println("[2] Susi");
+            System.out.println("[3] Alive");
+            System.out.print("Qual a sua resposta: ");
+            int c4 = ler.nextInt();
+
+            if(c4 == 1){
+                pontos = pontos + 1;
+                System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
+            }
+            else{
+                pontos = pontos - 1;
+                System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
+            }
+
+            System.out.println("\nEm qual filme de terror Samara(personagem) aparece saindo da TV ?");
+            System.out.println("[1] O grito");
+            System.out.println("[2] A freira");
+            System.out.println("[3] O chamado");
+            System.out.print("Qual a sua resposta: ");
+            int c5 = ler.nextInt();
+
+            if(c5 == 3){
+                pontos = pontos + 1;
+                if(pontos==5){
+                    System.out.println ("Parabéns! Seu total de pontos é de: " + pontos + ", portanto, você acabou de subir de nível");
+                }
+
+            }
+            else{
+                pontos = pontos - 1;
+                System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
+            }
+
+            System.out.println("\nQual o nome da serie em que dois irmãos investiga casos sobrenaturais ? ");
+            System.out.println("[1] Eu vi");
+            System.out.println("[2] American Horror Stories");
+            System.out.println("[3] Sobrenatural");
+            System.out.print("Qual a sua resposta: ");
+            int c6 = ler.nextInt();
+
+            if(c6 == 3){
+                pontos = pontos + 1;
+                if(pontos==5){
+                    System.out.println ("Parabéns! Seu total de pontos é de: " + pontos + ", portanto, você acabou de subir de nível");
+                }
+                else{
+                    System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
+                }
+            }
+
+            else if (c6!=3){
+                pontos = pontos - 1;
+                System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
+            }
+
+
+            System.out.println("\nQual o nome do filme de terror lançado no ano de 2004 que se passa no japão? ");
+            System.out.println("[1] Harry Potter");
+            System.out.println("[2] Chucky");
+            System.out.println("[3] O grito");
+            System.out.print("Qual a sua resposta: ");
+            int c7 = ler.nextInt();
+
+            if(c7 == 3){
+                pontos = pontos + 1;
+                if(pontos==5){
+                    System.out.println ("Parabéns! Seu total de pontos é de: " + pontos + ", portanto, você acabou de subir de nível");
+                }
+                else{
+                    System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
+                }
+            }
+
+            else if (c7!=3){
+                pontos = pontos - 1;
+                System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
+            }
+
+            System.out.println("\nQual filme de terror se passa a maior parte em um unico ambiente ,por ser um filme de baixo orçamento  ? ");
+            System.out.println("[1] Atividade Paranormal");
+            System.out.println("[2] Jogos Vorazes");
+            System.out.println("[3] Jogos Mortais I");
+            System.out.print("Qual a sua resposta: ");
+            int c8 = ler.nextInt();
+
+            if(c8 == 3){
+                pontos = pontos + 1;
+                if(pontos==5){
+                    System.out.println ("Parabéns! Seu total de pontos é de: " + pontos + ", portanto, você acabou de subir de nível!");
+                }
+                else{
+                    System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
+                }
+            }
+
+            else if (c8!=3){
+                pontos = pontos - 1;
+                System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
+            }
+
+            System.out.println("\nO filme Doutor Sono é continuação de qual filme de terror ? ");
+            System.out.println("[1] Carrie, a Estranha");
+            System.out.println("[2] Christine, o Carro Assassino");
+            System.out.println("[3] O Ilumidado");
+            System.out.print("Qual a sua resposta: ");
+            int c9 = ler.nextInt();
+
+            if(c9 == 3){
+                pontos = pontos + 1;
+                if(pontos==5){
+                    System.out.println ("Parabéns! Seu total de pontos é de: " + pontos + ", portanto, você acabou de subir de nível");
+                }
+                else{
+                    System.out.println ("Parabéns! Seu total de pontos é de: " + pontos);
+                }
+            }
+
+            else if (c9!=3){
+                pontos = pontos - 1;
+                System.out.println ("ERROUUU! Seu total de pontos é de: " + pontos);
+            }
+
+            System.out.println("\nEm qual estado americano fica o museu do oculto ou museu dos Warren? ");
+            System.out.println("[1] Nova Iorque");
+            System.out.println("[2] São Paulo");
+            System.out.println("[3] Connecticut ");
+            System.out.print("Qual a sua resposta: ");
+            int c10 = ler.nextInt();
+
+            if(c10 == 3){
+                pontos = pontos + 1;
+                if(pontos==5){
+                    System.out.println ("Parabéns! Seu total de pontos é de: " + pontos + ", portanto, você acabou de subir de nível");
+                }
+                else{
+                    System.out.println ("Parabéns, certa respota! Seu total de pontos é de: " + pontos);
+                }
+            }
+
+            else if (c10!=3){
+                pontos = pontos - 1;
+                System.out.println ("Oh nao, voce errou! Seu total de pontos é de: " + pontos);
+            }
+
+
+        }
+        else{
+            System.out.println("Opção inválida");
+        }
+
+        if(pontos>=1){
+            System.out.println("Parabéns! Você gosta muito de filme e livros de terror");
+        }
+        else if(pontos>=1){
+            System.out.println("Legal, você curti filmes de terror!");
+        }
+        else if(pontos>=1){
+            System.out.println("É, pelo jeito filme de terror não é o seu forte");
+        }
+        else{
+            System.out.println("Você não gosta de filmes de terror");
+        }
+
+        conditionalWay();
     }
+    public static void menu (){
+        Scanner ler = new Scanner(System.in);
 
-   
-     if(pontos>=1){
-        System.out.println("Parabéns! Você gosta muito de filme e livros de terror");
-     }
-     else if(pontos>=1){
-        System.out.println("Legal, você curti filmes de terror!");    
-     }
-     else if(pontos>=1){
-       System.out.println("É, pelo jeito filme de terror não é o seu forte");
-     }      
-     else{
-       System.out.println("Você não gosta de filmes de terror");
-     }
-    return pontos;
+        System.out.println("|****************|");
+        System.out.println("|      Menu      |");
+        System.out.println("|****************|");
+        System.out.println("| 1 - Instrucoes |");
+        System.out.println("| 2 - Jogar      |");
+        System.out.println("| 3 - Creditos   |");
+        System.out.println("| 4 - Sair       |");
+        System.out.println("|   Sua Opcao    |");
+        System.out.println("|****************|");
 
-  }
- 
+        int opcao = ler.nextInt();
+
+        switch(opcao){
+            case 1: System.out.println("Opção 1: Instruções");
+                instrucoes();
+                break;
+
+            case 2: System.out.println("Opção 2: Jogar");
+                jogar();
+                break;
+
+            case 3: System.out.println ("Opção 3: Créditos");
+                creditos();
+                break;
+
+            case 4: System.out.println("Opção 4 - Sair");
+                System.exit(0);
+                break;
+
+            default: System.out.print("Opção Inexistente! \nTente novamente!");
+
+        }
+    }
+    public static void conditionalWay () {
+        Scanner readOption = new Scanner(System.in);
+
+        System.out.println("");
+        System.out.println("[m] Menu");
+        System.out.print("[s] Sair");
+        System.out.println("");
+
+        String option = readOption.nextLine();
+
+        switch(option){
+            case "m":
+                menu();
+                break;
+
+            case "s":
+                System.exit(0);
+                break;
+
+            default:
+                System.out.print("Opção Inexistente! \nTente novamente!");
+                System.out.println("");
+                conditionalWay();
+        }
+    }
 }
